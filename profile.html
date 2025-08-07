@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #555;
+    }
+    .required::after {
+      content: " *";
+      color: red;
+    }
+    .submit-btn {
+      margin-top: 25px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Job Application Form</h2>
+    <form>
+      <label class="required">Full Name</label>
+      <input type="text" name="fullName" required />
+
+      <label class="required">Email</label>
+      <input type="email" name="email" required />
+
+      <label class="required">Phone Number</label>
+      <input type="tel" name="phone" required />
+
+      <label class="required">Applied Position</label>
+      <input type="text" name="position" required />
+
+      <label>Earliest Start Date</label>
+      <input type="date" name="startDate" />
+
+      <label>Preferred Interview Date</label>
+      <input type="date" name="interviewDate" value="2025-08-07" />
+
+      <label>Preferred Interview Time</label>
+      <select name="interviewTime">
+        <option value="15:00">3:00 PM</option>
+        <option value="16:00">4:00 PM</option>
+      </select>
+
+      <label>Cover Letter</label>
+      <textarea name="coverLetter" rows="5" maxlength="1200"></textarea>
+      <div class="note">Please do not exceed 200 words.</div>
+
+      <label class="required">Upload Resume</label>
+      <input type="file" name="resume" required />
+      <div class="note">This field is required.</div>
+
+      <label>Any Other Documents to Upload</label>
+      <input type="file" name="otherDocs" />
+      <div class="note">You can share certificates, diplomas etc.</div>
+
+      <label>Upload Profile Image</label>
+      <input type="file" name="profileImage" accept="image/*" />
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+</body>
+</html>
