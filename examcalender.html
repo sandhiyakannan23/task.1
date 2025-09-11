@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .calendar {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .exam {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .exam:last-child {
+      border-bottom: none;
+    }
+    .date {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .subject {
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📅 Exam Calendar</h1>
+  <div class="calendar" id="examCalendar"></div>
+
+  <script>
+    const exams = [
+      { date: '2025-09-15', subject: 'Mathematics' },
+      { date: '2025-09-17', subject: 'Physics' },
+      { date: '2025-09-20', subject: 'Chemistry' },
+      { date: '2025-09-22', subject: 'English Literature' },
+      { date: '2025-09-25', subject: 'Computer Science' }
+    ];
+
+    const calendar = document.getElementById('examCalendar');
+
+    exams.forEach(exam => {
+      const examDiv = document.createElement('div');
+      examDiv.className = 'exam';
+      examDiv.innerHTML = `
+        <div class="date">${new Date(exam.date).toDateString()}</div>
+        <div class="subject">${exam.subject}</div>
+      `;
+      calendar.appendChild(examDiv);
+    });
+  </script>
+
+</body>
+</html>
